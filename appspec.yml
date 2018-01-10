@@ -14,7 +14,6 @@ permissions:
 hooks:
    ApplicationStop:
     - location: lb_scripts/deregister_from_elb.sh
-      runas: ec2-user
    BeforeInstall:
     - location: httpd_scripts/install_apache.sh
       runas: ec2-user
@@ -25,4 +24,3 @@ hooks:
       runas: ec2-user
    ApplicationStart:
     - location: lb_scripts/register_with_elb.sh
-      runas: ec2-user
